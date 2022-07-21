@@ -6,16 +6,8 @@ String++
 Introduction
 -------------
 
-**String++** is a personal utility project written in C++ to simplify working
-with character arrays (``char *``) while also learning C++.
-
-I wanted to take on a project that took advantage of what the C programming
-language lacks, which is classes! This started as a project to recreate
-Python's ``str`` class but at the moment it is just a utility for future
-project's I have in mind.
-
-The goal of the project was to write everything from scratch so there are no
-external dependencies for this project.
+**String++** is a utility project written in C++ to simplify working
+with character arrays (``char *``).
 
 Technologies Used
 ------------------
