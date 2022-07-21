@@ -43,140 +43,140 @@
       public:
         /**
          * @brief Constructor for new String objects.
-         * 
+         *
          * @param _str The initial content to wrap the String class around.
-         * 
+         *
          * @return String
          */
         String(const char * = "");
 
         /**
          * @brief Copy constructor for new String objects.
-         * 
-         * @param _that A reference to a String object to copy.
-         * 
+         *
+         * @param _that A reference to the String object to copy.
+         *
          * @return String
          */
         String(const String &);
 
         /**
          * @brief Destructor for String objects.
-         * 
+         *
          * @return void
          */
         ~String() noexcept;
 
         /**
          * @brief Reallocate memory for the wrapped string.
-         * 
+         *
          * @note This method is mostly used internally but public since there
-         *       is no other way to manually destroy and recreate the wrapped
-         *       string.
-         * 
+         *       is no other way for the user to destroy and recreate the
+         *       wrapped string.
+         *
          * @param _new_size The new amount of memory to allocate (1 = 1 byte).
-         * 
+         *
          * @return void
          */
         void Resize(uint64_t);
 
         /**
-         * @brief Get the starting position of a target substring.
-         * 
+         * @brief Get the starting index of a target substring.
+         *
          * @param _target The substring to search for.
          * @param _index An optional starting index. Defaults to 0ULL.
-         * 
-         * @return uint64_t 
+         *
+         * @return uint64_t
          */
         uint64_t Index(const char *, uint64_t = 0ULL);
 
         /**
-         * @brief Checks if the string contains the target substring.
-         * 
+         * @brief Checks if the wrapped string contains the target substring.
+         *
          * @param _target The substring to search for.
-         * 
+         *
          * @return bool
          */
         bool Contains(const char *);
 
         /**
-         * @brief Concatenates a string to the end of the string.
-         * 
+         * @brief Concatenates the wrapped string with the new string.
+         *
          * @param _source The string to add.
-         * 
-         * @return String & 
+         *
+         * @return String &
          */
         String & Append(const char *);
 
         /**
-         * @brief Swap the target substring with another string.
-         * 
+         * @brief Swap the target substring with another substring.
+         *
          * @param _target The substring to be replaced.
          * @param _source The content to replace the target substring with.
          * @param _max The number of substrings to replace. Defaults to 1.
-         * 
-         * @return String & 
+         *
+         * @return String &
          */
         String & Replace(const char *, const char *, int16_t = 1);
 
         /**
          * @brief Removes everything following the first match of
          *        the target substring.
-         * 
+         *
          * @param _target The substring to search for.
-         * 
-         * @return String & 
+         *
+         * @return String &
          */
         String & Trim(const char *);
 
         /**
-         * @brief Converts all the characters of the string to uppercase.
-         * 
-         * @return String & 
+         * @brief Converts the wrapped string to uppercase.
+         *
+         * @return String &
          */
         String & ToUpper(void);
 
 
         /**
-         * @brief Converts all the characters of the string to lowercase.
-         * 
-         * @return String & 
+         * @brief Converts the wrapped string to lowercase.
+         *
+         * @return String &
          */
         String & ToLower(void);
 
         /**
-         * @brief Convert the first character of the string to uppercase
-         *        and the rest of the string to lowercase.
-         * 
-         * @return String & 
+         * @brief Convert the first character of the wrapped string to
+         *        uppercase and the remaining characters to lowercase.
+         *
+         * @return String &
          */
         String & ToTitle(void);
 
         /**
          * @brief Accessor method to the wrapped null-terminated string.
-         * 
-         * @return constexpr char * 
+         *
+         * @return constexpr char *
          */
         constexpr char * c_str(void) const;
 
         /**
          * @brief Checks if the object is wrapping a string.
-         * 
+         *
          * @return constexpr bool
          */
         constexpr bool IsEmpty(void) const;
 
         /**
          * @brief Accessor method for the current length of the string.
-         * 
-         * @return constexpr uint64_t 
+         *
+         * @return constexpr uint64_t
          */
         constexpr uint64_t length(void) const;
 
         /**
          * @brief Accessor method for the current number of formatting args
          *        remaining in the string (i.e., how many "{}" are present).
-         * 
-         * @return constexpr int64_t 
+         *
+         * @return constexpr int64_t
          */
         constexpr int64_t format_args(void) const;
 
@@ -207,11 +207,11 @@
          *        Counts the number of "{}" that appear within the @p _source
          *        string. Used for incrementing and decrementing the member
          *        @p format_args_.
-         * 
+         *
          * @param _source The string to be evaluated.
          * @param _index An optional starting index. Defaults to 0ULL.
-         * 
-         * @return uint64_t 
+         *
+         * @return uint64_t
          */
         uint64_t CountFormatArgs(const char *, uint64_t = 0ULL);
     };
