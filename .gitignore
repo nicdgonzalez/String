@@ -1,0 +1,10 @@
+# .gitignore
+
+# General
+_*
+
+# C/C++
+*.exe
+
+# Visual Studio Code
+.vscode
