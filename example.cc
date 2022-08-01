@@ -1,3 +1,9 @@
+/**
+ * NOTE:
+ * This is an executable version of the example found in the README file.
+ * Refer to the *README.rst* file.
+ */
+
 #include <iostream>
 
 #include <cstdio>
@@ -26,6 +32,7 @@ int main() {
     time_info
   );
 
+  // Example Output: 20220702.122421.FATAL.log
   cout << (log_file_fmt % date_time % "FATAL") << endl;
 
   return 0;
